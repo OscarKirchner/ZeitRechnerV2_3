@@ -1,0 +1,194 @@
+﻿<Window x:Class="WpfApplication1.Einstellungen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d" Background="#FFE5E5E5"
+        Title="Einstellungen Version2_2_3" Height="457.334" Width="430" KeyDown="Window_KeyDown" ResizeMode="NoResize" 
+        WindowStyle="ToolWindow" KeyUp="Window_KeyUp">
+    <Grid >
+        <TabControl  x:Name="tabControl" Height="370" VerticalAlignment="Top" SelectionChanged="tabControl_SelectionChanged" SelectedIndex="0">
+            <TabItem Header="Allgemein" x:Name="tabItem1">
+                <!--ToolTip="Allgemein [A]">-->
+                <Grid Background="#FFFFD1F5" x:Name="Grid1" IsEnabled="True" Margin="0,0,0,-50">
+                    <ComboBox x:Name="comboBox" SelectedValuePath="Content" IsEnabled="True" HorizontalAlignment="Left" Height="23" Margin="241,21,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem x:Name="WhiteB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="White" Foreground="White">---</TextBlock>
+                                <TextBlock Text=" Weiß (Default)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="GreenB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="LightGreen" Foreground="LightGreen">---</TextBlock>
+                                <TextBlock Text=" Grün"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="LightBlueB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="LightBlue" Foreground="LightBlue">---</TextBlock>
+                                <TextBlock Text=" Blau"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="RosaB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="Pink" Foreground="Pink">---</TextBlock>
+                                <TextBlock Text=" Rosa"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="LightCoralB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="LightCoral" Foreground="LightCoral">---</TextBlock>
+                                <TextBlock Text=" Rot"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="LightYellowB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="LightGoldenrodYellow" Foreground="LightGoldenrodYellow">---</TextBlock>
+                                <TextBlock Text=" Gelb"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="BuntB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="Yellow" Foreground="Yellow">.</TextBlock>
+                                <TextBlock Background="Red" Foreground="Red">.</TextBlock>
+                                <TextBlock Background="Purple" Foreground="Purple">.</TextBlock>
+                                <TextBlock Background="Blue" Foreground="Blue">.</TextBlock>
+                                <TextBlock Background="LimeGreen" Foreground="LimeGreen">.</TextBlock>
+                                <TextBlock Text=" Bunt"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="DarkGrayB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="LightGray" Foreground="LightGray">---</TextBlock>
+                                <TextBlock Text=" Grau"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="BlackB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="DimGray" Foreground="DimGray">---</TextBlock>
+                                <TextBlock Text=" Dunkelgrau"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="RealBlackB">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Background="Black" Foreground="Black">---</TextBlock>
+                                <TextBlock Text=" Schwarz"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label x:Name="label" IsEnabled="True" Content="Winterspecial:" HorizontalAlignment="Left" Margin="18,236,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2" Content="Default Zeitguthaben: " HorizontalAlignment="Left" Margin="18,45,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3" Content="Default 'Beginn heute': " HorizontalAlignment="Left" Margin="18,73,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3_Copy" Content="Default Pausenzeit: " HorizontalAlignment="Left" Margin="18,101,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3_Copy1" Content="Default 'Wann magst du gehen': " HorizontalAlignment="Left" Margin="18,129,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3_Copy2" Content="Default Wunschfaktor: " HorizontalAlignment="Left" Margin="18,157,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"  Height="23" Margin="241,49,0,0" TextWrapping="Wrap" Text="0,00" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="textBox_Copy" PreviewTextInput="NumberValidationTextBoxOnlyNumber" HorizontalAlignment="Left" Height="23" Margin="241,77,0,0" TextWrapping="Wrap" MaxLength="2" Text="08" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="textBox_Copy1" PreviewTextInput="NumberValidationTextBoxOnlyNumber" HorizontalAlignment="Left" Height="23" Margin="289,77,0,0" TextWrapping="Wrap" MaxLength="2" Text="00" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="textBox_Copy2" PreviewTextInput="NumberValidationTextBoxOnlyNumber" HorizontalAlignment="Left" Height="23" Margin="241,105,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="textBox_Copy3" PreviewTextInput="NumberValidationTextBoxOnlyNumber" HorizontalAlignment="Left" Height="23" Margin="241,133,0,0" TextWrapping="Wrap" Text="17" MaxLength="2" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="textBox_Copy4" PreviewTextInput="NumberValidationTextBoxOnlyNumber" HorizontalAlignment="Left" Height="23" Margin="289,133,0,0" TextWrapping="Wrap" Text="00" MaxLength="2" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="textBox_Copy5" PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="23" Margin="241,161,0,0" TextWrapping="Wrap" Text="2,5" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="textBox_Copy6" PreviewTextInput="NumberValidationTextBoxSpecial" HorizontalAlignment="Left" Height="23" Margin="241,189,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="45"/>
+                    <CheckBox x:Name="checkBox" ToolTip="Für dauerhafte Änderung muss gespeichert werden!" IsEnabled="True" Content="Aktiviert" HorizontalAlignment="Left" Margin="241,242,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked"/>
+                    <Label x:Name="label4" Content=":" HorizontalAlignment="Left" Margin="273,73,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label4_Copy" Content=":" HorizontalAlignment="Left" Margin="271,130,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label4_Copy1" Content="Uhr" HorizontalAlignment="Left" Margin="321,73,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label4_Copy2" Content="Uhr" HorizontalAlignment="Left" Margin="321,130,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label5" IsEnabled="True" Content="Modus:" HorizontalAlignment="Left" Margin="18,265,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="radioButton" ToolTip="InesCRM | Alt" IsEnabled="True" Content="Faktor" HorizontalAlignment="Left" Margin="241,271,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="radioButton_Copy" ToolTip="Vertec o.Ä. | Neu" IsEnabled="True" Content="Uhrzeit" HorizontalAlignment="Left" Margin="298,271,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button1" ToolTip="Neue Werte als Default festlegen" Content="Speichern" HorizontalAlignment="Left" Height="25" Margin="241,307,0,0" VerticalAlignment="Top" Width="120" Click="button1_Click"/>
+                    <Button x:Name="button2" ToolTip="Auf Standartwerte zurücksetzen" Content="Reset" HorizontalAlignment="Left" Margin="18,307,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="button2_Click"/>
+                    <Label x:Name="label2_Copy" IsEnabled="True" Content="Default Hintergrundfarbe: " HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3_Copy3" ToolTip="Achtung, dies ist nicht die 'Regelarbeitszeit'" Content="Default WunschArbeitsStunden: " HorizontalAlignment="Left" Margin="20,185,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label4_Copy3" Content="(zb. 8h 35 min = 8,35)" ToolTip="Angaben exkl. Pause" HorizontalAlignment="Left" Margin="283,185,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tipps &amp; Tricks" x:Name="tabItem2">
+                <!--ToolTip="Tipps und Tricks [T]">-->
+                <Grid Background="#FFADE2E3">
+                    <ScrollViewer x:Name="SV3">
+                        <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Padding="5" Text="TippsNTricks"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TastenControls" x:Name="tabItem5">
+                <!--ToolTip="TastenControls [C]">-->
+                <Grid Background="#ffcc80">
+                    <ListView Background="#ffcc80"  x:Name="TCList" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                        <ListView.Resources>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            </Style>
+                        </ListView.Resources>
+                        
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Header="Taste" Width="100" DisplayMemberBinding="{Binding Path=Taste}"/>
+                                    <GridViewColumn Header="Funktion" Width="280" DisplayMemberBinding="{Binding Path=Funktion}"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate>
+                                                    <Expander IsExpanded="True">
+                                                        <Expander.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock FontWeight="Bold" FontSize="14" Foreground="Black" Text="{Binding Name}"/>
+                                                            </StackPanel>
+                                                        </Expander.Header>
+                                                        <ItemsPresenter />
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Updates" x:Name="tabItem3">
+                <!--ToolTip="Update/Changelog [U]">-->
+                <Grid Background="#FFBAE3BB">
+                    <ScrollViewer x:Name="SV4">
+                        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="UpdateText" Padding="5"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Über uns/Info" x:Name="tabItem4">
+                <!--ToolTip="Über uns/Info [I]">-->
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="211" Margin="10,16,0,0" TextWrapping="Wrap" Text="UeberUns" VerticalAlignment="Top" Width="396" />
+                    <TextBlock x:Name="textBlock2" FontWeight="Bold" ToolTip="Emailprogramm öffnet sich [E/M]" HorizontalAlignment="Left" Height="20" Margin="129,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102">
+                        <Hyperlink NavigateUri="mailto:kirchner.oscar@googlemail.com?subject=AnfrageZeitrechnerApp&amp;body=Hallo Oscar," RequestNavigate="Hyperlink_RequestNavigate">
+                            Email Schreiben
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock4" ToolTip="Github-Repository öffnet sich im Standartbrowser" HorizontalAlignment="Left" Height="20" Margin="236,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88">
+                        <Hyperlink NavigateUri="https://github.com/OscarKirchner/ZeitRechner" RequestNavigate="Hyperlink_RequestNavigate">
+                            GitHub [v1_5_3]
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock4_Copy" ToolTip="Github-Repository öffnet sich im Standartbrowser"  HorizontalAlignment="Left" Height="20" Margin="236,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"><Hyperlink NavigateUri="https://github.com/OscarKirchner/ZeitRechnerV2" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="GitHub [v2_2_3]"/></Hyperlink></TextBlock>
+                    <Button x:Name="button3" Content="Anleitung" HorizontalAlignment="Left" Height="40" Margin="10,242,0,0" VerticalAlignment="Top" Width="101" Click="button3_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="button" Content="Fertig" ToolTip="Schließen [ESC]" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Height="34" Click="button_Click" Width="392" />
+    </Grid>
+</Window>
